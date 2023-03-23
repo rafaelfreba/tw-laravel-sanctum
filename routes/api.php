@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MobileLoginController;
 use App\Http\Controllers\PedidoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/pedido', [PedidoController::class, 'listar'])->name('pedidos.listar');
+Route::post('/mobile/login', [MobileLoginController::class, 'login'])->name('mobile.login');
