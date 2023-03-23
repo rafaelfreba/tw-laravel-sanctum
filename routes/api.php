@@ -20,5 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/pedido', [PedidoController::class, 'listar'])->name('pedidos.listar');
+Route::middleware('auth:sanctum')->get('/pedido', [PedidoController::class, 'listar'])->name('pedidos.listar');
+
 Route::post('/mobile/login', [MobileLoginController::class, 'login'])->name('mobile.login');
