@@ -25,6 +25,6 @@ class MobileLoginController extends Controller
             ]);
         }
      
-        return $user->createToken($request->device_name)->plainTextToken;
+        return $user->createToken($request->device_name, ['pedido:mostrar'])->plainTextToken;
     }
 }
